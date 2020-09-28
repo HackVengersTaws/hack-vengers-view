@@ -1,0 +1,5 @@
+.mapa {
+    min-height: 100vh !important;
+    padding-top: 20px;
+    background-color: rgba(165, 164, 164, 0.363);
+}
