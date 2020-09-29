@@ -1,9 +1,21 @@
+
 .menu {
     min-height: 100vh !important;
     padding-top: 20px;
     background-color: rgba(6, 1, 41, 1);
+   
+    /*color: rgb(165,174,188);*/
+}
+.titulos{
     display: flex;
     justify-content: center;
-    color: #a5aebc;
-    /*color: rgb(165,174,188);*/
+    color:white;
+}
+.form1{
+    padding-right:  10% ;
+    padding-left: 10% ;
+    color:white;
+}
+.fila{
+    padding-top: 10%;
 }

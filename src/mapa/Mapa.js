@@ -3,9 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap'
 import './Mapa.css'
 class Mapa extends Component {
     render() {
-        return (
+        return (  
             <div className="mapa">
-                <h2>Esto es el Mapa</h2>
+                <h1>Esto es el Mapa</h1>
             </div>
         );
     }

@@ -8,8 +8,8 @@ function App() {
   return (
     <Container className="contenedor" fluid>
       <Row noGutters="true">
-        <Col md={2}><Menu /></Col>
-        <Col md={10}><Mapa /></Col>
+        <Col xs={3}><Menu /></Col>
+        <Col xs={9}><Mapa /></Col>
       </Row>
     </Container>
   );
