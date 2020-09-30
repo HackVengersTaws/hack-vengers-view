@@ -1,21 +1,13 @@
 
-.menu {
-    min-height: 100vh !important;
-    padding-top: 20px;
-    background-color: rgba(6, 1, 41, 1);
-   
-    /*color: rgb(165,174,188);*/
+.menu{
+    min-height: 100vh;
 }
+.logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
 .titulos{
-    display: flex;
-    justify-content: center;
-    color:white;
-}
-.form1{
-    padding-right:  10% ;
-    padding-left: 10% ;
-    color:white;
-}
-.fila{
-    padding-top: 10%;
+    color: white;
+    
 }

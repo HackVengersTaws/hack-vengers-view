@@ -1,34 +1,24 @@
 import React, { Component } from 'react';
-import { Form, Col } from 'react-bootstrap'
+import { Layout, Select } from 'antd';
 import './Menu.css'
+
+const { Sider } = Layout;
 class Menu extends Component {
-    //className="menu"
+    handleChange=(value)=> {
+        console.log(`selected ${value}`);
+      }
+
     render() {
         return (
-            <div className="menu">
+            <Sider className="menu" breakpoint="lg" collapsedWidth="0" width="300">
 
-                <h2 className="titulos">HackVengers</h2>
+                <div className="logo" />
+                <p className="titulos">Palabras</p>
+                <Select  mode="tags" style={{ width: '100%' }} placeholder="Tags Mode" onChange={this.handleChange} />
 
-                <Form className="form1">
-                    <Form.Row className="fila">
-                        <Col>
-                            <Form.Label>Nombre</Form.Label>
-                            <Form.Control placeholder="First name" />
-                        </Col>
-                    </Form.Row>
-                    <Form.Row className="fila">
-                        <Col>
-                            <Form.Label>Apellido 1</Form.Label>
-                            <Form.Control placeholder="Last name" />
-                        </Col>
-                        <Col>
-                            <Form.Label>Apellido 2</Form.Label>
-                            <Form.Control placeholder="Last name" />
-                        </Col>
-                    </Form.Row>
-                </Form>
 
-            </div>
+
+            </Sider>
         );
     }
 }

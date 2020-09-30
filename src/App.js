@@ -1,17 +1,19 @@
 import React from 'react';
 import Mapa from './mapa/Mapa';
 import Menu from './menu/Menu';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Layout,  } from 'antd';
+import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import './App.css';
+const { Header, Content, Footer, Sider } = Layout;
+
+
 
 function App() {
   return (
-    <Container className="contenedor" fluid>
-      <Row noGutters="true">
-        <Col xs={3}><Menu /></Col>
-        <Col xs={9}><Mapa /></Col>
-      </Row>
-    </Container>
+    <Layout>
+      <Menu/>
+      <Mapa/>
+    </Layout>
   );
 }
 
