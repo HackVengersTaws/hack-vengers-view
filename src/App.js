@@ -4,7 +4,7 @@ import Menu from './menu/Menu';
 import { Layout,  } from 'antd';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import './App.css';
-const { Header, Content, Footer, Sider } = Layout;
+
 
 
 

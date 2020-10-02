@@ -9,5 +9,56 @@
   }
 .titulos{
     color: white;
+    padding-left: 5%;
+    margin: 0%;
+}
+
+.inputss{
+    width: 100%;
+  
     
+}
+.capa{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;   
+}
+
+.fecha{
+    padding-left: 5%;
+    padding-right: 5%;   
+}
+
+.Adv{
+    padding-left: 5%;
+    padding-top: 5%;
+       
+}
+.BotonAdv{
+    width:95%;
+    height: 50%;
+    opacity: 100%;
+    background-color:white ;
+ 
+}
+.TextOcultas{
+    color:black;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    margin: 0%;
+}
+
+.boton{
+    width:100% !important;
+    padding-left: 5%;
+    padding-bottom: 5%;
+
+}
+.botonExt{
+    padding-left: 5%;
+    width: 95% !important;
+    position: absolute;
+    bottom: 10px;
+
+
 }
