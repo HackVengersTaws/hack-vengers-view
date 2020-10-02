@@ -2,8 +2,10 @@ import React, { Component, useState } from 'react';
 import 'antd/dist/antd.css';
 import { Layout, Select, DatePicker, Collapse, InputNumber, Row, Button } from 'antd';
 import './Menu.css'
+import logo from '../img/logoTaws.png';
 const { RangePicker } = DatePicker;
 const { Panel } = Collapse;
+
 //const [dates, setDates] = useState([]);
 
 const { Sider } = Layout;
@@ -30,7 +32,9 @@ class Menu extends Component {
         return (
             <Sider className="menu" breakpoint="lg" collapsedWidth="0" width="300">
 
-                <div className="logo" />
+                <div className="logo" >
+                    <img src={logo} alt="Logo"  width="40%" height="auto"/>
+                </div>
                 <p className="titulos">Palabras clave</p>
                 <div className="capa"><Select className="inputss" mode="tags" placeholder="Separados por Enter" onChange={this.handleChange} />   </div>
 
@@ -78,12 +82,13 @@ class Menu extends Component {
                         </Panel>
 
                     </Collapse>
-                </div>,
+                </div>
 
                 <div className="botonExt">
-                <Button className="boton" type="primary" block>
-                    Descargar
-                </Button></div>
+                    <Button className="boton" type="primary" >
+                        Descargar
+                    </Button>
+                </div>
 
             </Sider >
         );

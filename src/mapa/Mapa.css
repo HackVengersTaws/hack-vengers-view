@@ -1,3 +1,31 @@
 .mapa{
-    min-height: 100vh;
+    min-height: 100%;
+    min-width: auto;
+    background-color:#666;
+    
+}
+.svg-map {
+    padding-right: 5%;
+    padding-left: 5%;
+    width: auto;
+   height: 100%;
+    background-color:#666;
+    stroke: #666;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-linejoin: round; 
+}
+.svg-map__location {
+    fill: rgba(255, 255, 255, 0.2);
+    cursor: pointer; 
+}
+.svg-map__location:hover {
+    fill: #001529;
+    outline: 0; 
+}
+.svg-map__location:focus{
+    outline: 0; 
+}
+.svg-map__location[aria-checked=true] {
+    fill: #001529; 
 }
