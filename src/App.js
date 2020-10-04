@@ -5,7 +5,11 @@ import { Layout, Modal, Spin, Tabs } from 'antd';
 import { BarChartOutlined, LineChartOutlined, PieChartOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import { Bar, Line, Pie } from 'react-chartjs-2';
+import ReactExport from "react-export-excel";
 import './App.css';
+const ExcelFile = ReactExport.ExcelFile;
+const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
+const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 const { TabPane } = Tabs;
 class App extends Component {
   constructor(props) {
@@ -38,6 +42,7 @@ class App extends Component {
       data5: [],
       labels6: [],
       data6: [],
+      tweets:[]
     }
   }
 
@@ -82,6 +87,7 @@ class App extends Component {
         console.log(res.data)// [{tweets: , analsis:}]
         // console.log(res.data.length)
         if (res.data.length > 0) {
+          var tweets =res.data[0].tweets
           var dataGeneral = res.data[0].analysis
           console.log(dataGeneral)
 
@@ -143,17 +149,17 @@ class App extends Component {
 
           }
 
-           // grafico 4 por horas
-           var dataG6 = dataGeneral.top_mencions
-           var keys6 = []
-           var values6 = []
-           for (var key in dataG6) {
-             var value = dataG6[key];
-             //console.log(key, value)
-             keys6.push(key)
-             values6.push(value)
- 
-           }
+          // grafico 4 por horas
+          var dataG6 = dataGeneral.top_mencions
+          var keys6 = []
+          var values6 = []
+          for (var key in dataG6) {
+            var value = dataG6[key];
+            //console.log(key, value)
+            keys6.push(key)
+            values6.push(value)
+
+          }
 
           this.setState({
             cargando: false,
@@ -169,6 +175,7 @@ class App extends Component {
             data5: values5,
             labels6: keys6,
             data6: values6,
+            tweets:tweets
           })
         } else {
           this.setState({
@@ -296,11 +303,43 @@ class App extends Component {
         <Modal
           title={"Gráficos - " + this.state.country}
           centered
+          footer={!this.state.cargando && [
+             <ExcelFile>
+                    <ExcelSheet data={this.state.tweets} name="tweets">
+                      <ExcelColumn label="country" value="country" />
+                      <ExcelColumn label="create_count" value="create_count" />
+                      <ExcelColumn label="create_count_year" value="create_count_year" />
+                      <ExcelColumn label="day" value="day" />
+                      <ExcelColumn label="day_name" value="day_name" />
+                      <ExcelColumn label="favorite_count" value="favorite_count" />
+                      <ExcelColumn label="fecha" value="fecha" />
+                      <ExcelColumn label="followers" value="followers" />
+                      <ExcelColumn label="friends" value="friends" />
+                      <ExcelColumn label="full_name_place" value="full_name_place" />
+                      <ExcelColumn label="hashtags" value="hashtags" />
+                      <ExcelColumn label="hora" value="hora" />
+                      <ExcelColumn label="language" value="language" />
+                      <ExcelColumn label="longuitud" value="longuitud" />
+                      <ExcelColumn label="mencions" value="mencions" />
+                      <ExcelColumn label="name_place" value="name_place" />
+                      <ExcelColumn label="num_hashtags" value="num_hashtags" />
+                      <ExcelColumn label="num_mencions" value="num_mencions" />
+                      <ExcelColumn label="retweet_count" value="retweet_count" />
+                      <ExcelColumn label="sentimiento" value="sentimiento" />
+                      <ExcelColumn label="texto" value="texto" />
+                      <ExcelColumn label="username" value="username" />
+                    </ExcelSheet>
+                  </ExcelFile>
+          ]}
           visible={this.state.visible}
-          onOk={() => this.setState({ visible: false, cargando: true })}
+          onOk={() => {
+            this.setState({ visible: false, cargando: true })
+           
+          }}
           onCancel={() => this.setState({ visible: false, cargando: true })}
           width={1000}
           cancelButtonProps={{ style: { display: 'none' } }}
+          //okText="Descargar"
           okButtonProps={{ style: { display: 'none' } }}
 
         >
