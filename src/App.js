@@ -34,12 +34,13 @@ class App extends Component {
       data3: [],
       labels4: [],
       data4: [],
-
-
-
+      labels5: [],
+      data5: [],
+      labels6: [],
+      data6: [],
     }
-
   }
+
   handleClickModal = () => {
     this.setState({
       visible: true,
@@ -61,22 +62,25 @@ class App extends Component {
     })
     axios.post(`http://127.0.0.1:8000/filtros/`,
       {
-        fecha_inicio:this.state.fecha_ini,
-        fecha_fin:this.state.fecha_fin,
+        fecha_inicio: this.state.fecha_ini,
+        fecha_fin: this.state.fecha_fin,
         hashtags: this.state.hashtags.join(),
-        min_hashtags:this.state.min_hashtags,
+        min_hashtags: this.state.min_hashtags,
         mencions: this.state.mencions.join(),
         keywords: this.state.keywords.join(),
         username: this.state.username,
-        min_followers:this.state.min_followers,
+        min_followers: this.state.min_followers,
         country: this.state.country,
         min_faves: this.state.min_faves,
         min_retweets: this.state.min_retweets,
         min_replies: this.state.min_replies,
       })
       .then(res => {
-        console.log(res.data)
-        console.log(res.data.length)
+        console.log(res)
+
+        console.log(typeof (res.data))
+        console.log(res.data)// [{tweets: , analsis:}]
+        // console.log(res.data.length)
         if (res.data.length > 0) {
           var dataGeneral = res.data[0].analysis
           console.log(dataGeneral)
@@ -127,6 +131,30 @@ class App extends Component {
 
           }
 
+          // grafico 4 por horas
+          var dataG5 = dataGeneral.top_hashtag
+          var keys5 = []
+          var values5 = []
+          for (var key in dataG5) {
+            var value = dataG5[key];
+            //console.log(key, value)
+            keys5.push(key)
+            values5.push(value)
+
+          }
+
+           // grafico 4 por horas
+           var dataG6 = dataGeneral.top_mencions
+           var keys6 = []
+           var values6 = []
+           for (var key in dataG6) {
+             var value = dataG6[key];
+             //console.log(key, value)
+             keys6.push(key)
+             values6.push(value)
+ 
+           }
+
           this.setState({
             cargando: false,
             labels1: keys1,
@@ -137,6 +165,10 @@ class App extends Component {
             data3: values3,
             labels4: keys4,
             data4: values4,
+            labels5: keys5,
+            data5: values5,
+            labels6: keys6,
+            data6: values6,
           })
         } else {
           this.setState({
@@ -314,24 +346,57 @@ class App extends Component {
               <TabPane
                 tab={
                   <span>
-                    <LineChartOutlined />
+                    <BarChartOutlined />
                         Top 10 de los hashtags mas frecuentes
                   </span>
                 }
                 key="2"
               >
+                <Bar
+                  data={{
+                    labels: this.state.labels5,
+                    datasets: [
+                      {
+                        label: "Top 10 de los hashtags mas frecuentes",
 
+
+                        backgroundColor: '#36A2EB',
+
+                        hoverBackgroundColor: '#36A2EB',
+                        data: this.state.data5
+                      }
+                    ]
+                  }}
+                  width={100}
+                  height={50}
+
+                />
               </TabPane>
               <TabPane
                 tab={
                   <span>
-                    <LineChartOutlined />
+                    <BarChartOutlined />
                         Top 10 de los menciones mas frecuentes
                   </span>
                 }
                 key="3"
               >
-                Tab 2
+                <Bar
+                  data={{
+                    labels: this.state.labels6,
+                    datasets: [
+                      {
+                        label: "Top 10 de los menciones mas frecuentes",
+                        backgroundColor: '#36A2EB',
+                        hoverBackgroundColor: '#36A2EB',
+                        data: this.state.data6
+                      }
+                    ]
+                  }}
+                  width={100}
+                  height={50}
+
+                />
               </TabPane>
               <TabPane
                 tab={
@@ -374,7 +439,7 @@ class App extends Component {
               <TabPane
                 tab={
                   <span>
-                    <LineChartOutlined />
+                    <BarChartOutlined />
                         Cantidad promedio de tweets por días
                   </span>
                 }
@@ -403,7 +468,7 @@ class App extends Component {
               <TabPane
                 tab={
                   <span>
-                    <LineChartOutlined />
+                    <PieChartOutlined />
                         Analisís de sentimiemtos
                   </span>
                 }
