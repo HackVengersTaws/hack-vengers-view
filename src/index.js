@@ -2,9 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Principal from './Principal';
 import * as serviceWorker from './serviceWorker';
 import $ from 'jquery';
 import Popper from 'popper.js';
+
+/* ReactDOM.render(
+  <React.StrictMode>
+    <Principal />
+  </React.StrictMode>,
+  document.getElementById('principal')
+
+); */
 
 ReactDOM.render(
   <React.StrictMode>

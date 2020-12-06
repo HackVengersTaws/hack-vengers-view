@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react';
 import 'antd/dist/antd.css';
 import { Layout, Select, DatePicker, Collapse, InputNumber, Row, Button, Input, Divider } from 'antd';
-import './Menu.css'
-import logo from '../img/logoTaws.png';
+import '../assets/css/Menu.css'
+import logo from '../assets/images/logoTaws.png';
 import { UserOutlined, NumberOutlined } from '@ant-design/icons';
 import moment from 'moment';
 const { RangePicker } = DatePicker;

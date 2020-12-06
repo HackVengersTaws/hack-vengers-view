@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Mapa from './mapa/Mapa';
-import Menu from './menu/Menu';
+import Mapa from './components/Mapa';
+import Menu from './components/Menu';
 import { Layout, Modal, Spin, Tabs } from 'antd';
 import { BarChartOutlined, LineChartOutlined, PieChartOutlined } from '@ant-design/icons';
 import axios from 'axios';

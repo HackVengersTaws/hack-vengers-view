@@ -3,7 +3,7 @@ import { Layout, } from 'antd';
 import World from "@svg-maps/world";
 import { SVGMap, CheckboxSVGMap, RadioSVGMap } from "react-svg-map";
 
-import './Mapa.css'
+import '../assets/css/Mapa.css'
 class Mapa extends Component {
 
     render() {
