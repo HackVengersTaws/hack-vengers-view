@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Layout, } from 'antd';
 import World from "@svg-maps/world";
 import { SVGMap, CheckboxSVGMap, RadioSVGMap } from "react-svg-map";
+import '../css/Mapa.css'
 
-import './Mapa.css'
 class Mapa extends Component {
 
     render() {
@@ -14,4 +14,4 @@ class Mapa extends Component {
         );
     }
 }
-export default Mapa;
+export default Mapa; 

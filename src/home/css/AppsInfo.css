@@ -1,0 +1,13 @@
+.IntroApp {
+    text-align: center;
+    width: 100%;
+    height: 90px;
+    position: relative;
+    top: 30%;
+    font-size: large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-welcome{
+    color: rgb(83, 67, 67);
+}

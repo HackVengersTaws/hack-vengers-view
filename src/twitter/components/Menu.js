@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react';
 import 'antd/dist/antd.css';
 import { Layout, Select, DatePicker, Collapse, InputNumber, Row, Button, Input, Divider } from 'antd';
-import './Menu.css'
-import logo from '../img/logoTaws.png';
+import '../css/Menu.css'
+import logo from '../../images/logoTw_Page.png';
 import { UserOutlined, NumberOutlined } from '@ant-design/icons';
 import moment from 'moment';
 const { RangePicker } = DatePicker;
@@ -31,8 +31,8 @@ class Menu extends Component {
         return (
             <Sider className="menu" breakpoint="lg" collapsedWidth="0" width="300">
 
-                <div className="logo" >
-                    <img src={logo} alt="Logo" width="40%" height="auto" />
+                <div className="logoTw" >
+                    <img src={logo} alt="Logo" width="35%" height="auto" />
                 </div>
                 <p className="titulos">Palabras claves</p>
                 <div className="capa">
@@ -51,7 +51,6 @@ class Menu extends Component {
                         mode="tags"
                         placeholder="#"
                         onChange={this.props.handleChangeHashtag}
-
                     />
                 </div>
 
@@ -102,7 +101,6 @@ class Menu extends Component {
                         disabledDate={this.disabledDate}
                     />
                 </div>
-
 
                 <div className="Adv">
                     <Collapse accordion className="BotonAdv"  >
